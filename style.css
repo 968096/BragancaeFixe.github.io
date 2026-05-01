@@ -1,0 +1,22 @@
+/* Estilo do botão Voltar ao Topo */
+#btnTopo {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Fica fixo no ecrã */
+    bottom: 20px; /* Distância do fundo */
+    right: 20px; /* Distância da direita */
+    z-index: 99; /* Fica por cima de tudo */
+    font-size: 24px;
+    border: none;
+    outline: none;
+    background-color: #d35400; /* Pode mudar para a cor do café */
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 50%; /* Faz o botão ficar redondo */
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.3); /* Uma pequena sombra */
+    transition: background-color 0.3s;
+}
+
+#btnTopo:hover {
+    background-color: #a04000; /* Fica mais escuro ao passar o rato */
+}
