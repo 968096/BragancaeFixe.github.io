@@ -1,22 +1,58 @@
-/* Estilo do botão Voltar ao Topo */
+/* --- 1. ESTRUTURA BASE DA PÁGINA --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff; 
+}
+
+.menu-scroll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
+.menu-imagem {
+    width: 100%;
+    height: auto;
+    display: block; 
+}
+
+/* --- 2. O EFEITO DE SOBREPOSIÇÃO (OVERLAP) --- */
+.imagem-rodape {
+    /* Puxa a imagem para cima. Aumente ou diminua este valor (ex: -100px, -40px) conforme precisar */
+    margin-top: -80px; 
+    
+    /* Estas duas linhas garantem que a imagem 7 fica fisicamente por cima da imagem 5 */
+    position: relative; 
+    z-index: 10; 
+}
+
+/* --- 3. BOTÃO VOLTAR AO TOPO --- */
 #btnTopo {
-    display: none; /* Escondido por padrão */
-    position: fixed; /* Fica fixo no ecrã */
-    bottom: 20px; /* Distância do fundo */
-    right: 20px; /* Distância da direita */
-    z-index: 99; /* Fica por cima de tudo */
+    display: none; 
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    z-index: 99; 
     font-size: 24px;
     border: none;
     outline: none;
-    background-color: #d35400; /* Pode mudar para a cor do café */
+    background-color: #d35400; 
     color: white;
     cursor: pointer;
     padding: 10px 15px;
-    border-radius: 50%; /* Faz o botão ficar redondo */
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.3); /* Uma pequena sombra */
+    border-radius: 50%; 
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.3); 
     transition: background-color 0.3s;
 }
 
 #btnTopo:hover {
-    background-color: #a04000; /* Fica mais escuro ao passar o rato */
+    background-color: #a04000; 
 }

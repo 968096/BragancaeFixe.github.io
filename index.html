@@ -8,34 +8,25 @@
 </head>
 <body>
     
-    <!-- O contentor principal do seu menu -->
     <main class="menu-scroll">
-        
-        <!-- Substitua os nomes dos ficheiros pelos nomes dos seus SVGs -->
         <img src="assets/1.svg" alt="Capa do Menu" class="menu-imagem">
         <img src="assets/2.svg" alt="Menu de Cafetaria" class="menu-imagem">
         <img src="assets/3.svg" alt="Menu de Pastelaria" class="menu-imagem">
         <img src="assets/4.svg" alt="Menu de Bebidas Frias" class="menu-imagem">
         <img src="assets/6.svg" alt="Menu de Bebidas" class="menu-imagem">
         <img src="assets/5.svg" alt="Menu de Terremoto" class="menu-imagem">
-        <img src="assets/7.svg" alt="Menu de Bebidas" class="menu-imagem">
         
-        <!-- Adicione mais linhas <img> se tiver mais páginas -->
-
+        <!-- Adicionei a classe 'imagem-rodape' aqui -->
+        <img src="assets/7.svg" alt="Menu de Bebidas" class="menu-imagem imagem-rodape">
     </main>
-
-</body>
-</html>
-</main>
 
     <!-- Botão Voltar ao Topo -->
     <button id="btnTopo" title="Voltar ao início">⬆️</button>
 
-    <!-- Pequeno código para fazer o botão funcionar -->
+    <!-- Script do botão -->
     <script>
         let mybutton = document.getElementById("btnTopo");
 
-        // Mostra o botão quando o utilizador faz scroll 200px para baixo
         window.onscroll = function() {
             if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
                 mybutton.style.display = "block";
@@ -44,7 +35,6 @@
             }
         };
 
-        // Quando clica no botão, volta ao topo suavemente
         mybutton.onclick = function() {
             window.scrollTo({top: 0, behavior: 'smooth'});
         };
