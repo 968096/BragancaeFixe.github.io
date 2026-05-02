@@ -31,51 +31,25 @@ body {
     height: auto;
 }
 
-.imagem5-container {
-    position: relative;
-    width: 100%;
-}
 
-:root {
-    --cut-size: 5rem;
-}
-
-.imagem5-overlay {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: var(--cut-size);
-    background-color: #ffffff;
-    pointer-events: none;
-}
-
-/* --- 3. LINK INVISÍVEL DO INSTAGRAM --- */
+/* --- LINK INVISÍVEL DO INSTAGRAM --- */
 .rodape-container {
     position: relative;
     width: 100%;
     z-index: 10;
-    transform: translateY(calc(-1 * var(--cut-size)));
-}
-
-@media (max-width: 480px) {
-    :root { --cut-size: 4rem; }
+    display: block;
 }
 
 .link-instagram {
-    position: absolute; /* Permite mover o link por cima do desenho */
-    
-    /* Posicionamento do botão (ajuste estas percentagens no Live Server) */
-    top: 8%;  
-    left: 20%; 
-    
-    /* Tamanho da área clicável */
-    width: 50%; 
-    height: 5%; 
-    
-     /* DICA: Remova o comentário da linha abaixo para ver a caixa vermelha temporariamente.
-         Depois de confirmar que está em cima do @cafeartebef, volte a comentar novamente. */
-     /* background-color: rgba(255, 0, 0, 0.4); */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 7%;
+    width: 65%;
+    height: 8%;
+    display: block;
+    z-index: 20;
+    /* background-color: rgba(255, 0, 0, 0.4); */
 }
 
 /* --- 4. BOTÃO VOLTAR AO TOPO --- */
