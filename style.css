@@ -24,17 +24,61 @@ body {
     display: block; 
 }
 
-/* --- 2. O EFEITO DE SOBREPOSIÇÃO (OVERLAP) --- */
-.imagem-rodape {
-    /* Puxa a imagem para cima. Aumente ou diminua este valor (ex: -100px, -40px) conforme precisar */
-    margin-top: -80px; 
-    
-    /* Estas duas linhas garantem que a imagem 7 fica fisicamente por cima da imagem 5 */
-    position: relative; 
-    z-index: 10; 
+/* --- 2. O CORTE DA IMAGEM 5 --- */
+.imagem-cortada {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
-/* --- 3. BOTÃO VOLTAR AO TOPO --- */
+.imagem5-container {
+    position: relative;
+    width: 100%;
+}
+
+:root {
+    --cut-size: 5rem;
+}
+
+.imagem5-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--cut-size);
+    background-color: #ffffff;
+    pointer-events: none;
+}
+
+/* --- 3. LINK INVISÍVEL DO INSTAGRAM --- */
+.rodape-container {
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    transform: translateY(calc(-1 * var(--cut-size)));
+}
+
+@media (max-width: 480px) {
+    :root { --cut-size: 4rem; }
+}
+
+.link-instagram {
+    position: absolute; /* Permite mover o link por cima do desenho */
+    
+    /* Posicionamento do botão (ajuste estas percentagens no Live Server) */
+    top: 8%;  
+    left: 20%; 
+    
+    /* Tamanho da área clicável */
+    width: 50%; 
+    height: 5%; 
+    
+     /* DICA: Remova o comentário da linha abaixo para ver a caixa vermelha temporariamente.
+         Depois de confirmar que está em cima do @cafeartebef, volte a comentar novamente. */
+     /* background-color: rgba(255, 0, 0, 0.4); */
+}
+
+/* --- 4. BOTÃO VOLTAR AO TOPO --- */
 #btnTopo {
     display: none; 
     position: fixed; 
@@ -55,4 +99,9 @@ body {
 
 #btnTopo:hover {
     background-color: #a04000; 
+}
+
+#btnTopo:focus {
+    outline: 3px solid rgba(255,255,255,0.4);
+    box-shadow: 0 0 0 4px rgba(208,82,0,0.15);
 }

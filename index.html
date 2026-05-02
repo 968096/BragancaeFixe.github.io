@@ -3,30 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Menu digital do Café Arte — menus de cafetaria, pastelaria e bebidas.">
+    <meta name="theme-color" content="#ffffff">
     <title>Menu | Bragança é Fixe</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
+    <!-- Contentor principal do menu -->
     <main class="menu-scroll">
-        <img src="assets/1.svg" alt="Capa do Menu" class="menu-imagem">
-        <img src="assets/2.svg" alt="Menu de Cafetaria" class="menu-imagem">
-        <img src="assets/3.svg" alt="Menu de Pastelaria" class="menu-imagem">
-        <img src="assets/4.svg" alt="Menu de Bebidas Frias" class="menu-imagem">
-        <img src="assets/6.svg" alt="Menu de Bebidas" class="menu-imagem">
-        <img src="assets/5.svg" alt="Menu de Terremoto" class="menu-imagem">
         
-        <!-- Adicionei a classe 'imagem-rodape' aqui -->
-        <img src="assets/7.svg" alt="Menu de Bebidas" class="menu-imagem imagem-rodape">
+        <img src="assets/1.svg" alt="Capa do Menu" class="menu-imagem" loading="lazy">
+        <img src="assets/2.svg" alt="Menu de Cafetaria" class="menu-imagem" loading="lazy">
+        <img src="assets/3.svg" alt="Menu de Pastelaria" class="menu-imagem" loading="lazy">
+        <img src="assets/4.svg" alt="Menu de Bebidas Frias" class="menu-imagem" loading="lazy">
+        <img src="assets/6.svg" alt="Menu de Bebidas" class="menu-imagem" loading="lazy">
+        
+        <div class="imagem5-container">
+            <img src="assets/5.svg" alt="Menu de Terremoto" class="menu-imagem imagem-cortada" loading="lazy">
+            <div class="imagem5-overlay" aria-hidden="true"></div>
+
+            <div class="rodape-container">
+                <img src="assets/7.svg" alt="Siga-nos no Instagram" class="menu-imagem" loading="lazy">
+                <a href="https://www.instagram.com/cafeartebef" target="_blank" rel="noopener noreferrer" aria-label="Visite o nosso Instagram no Instagram" class="link-instagram" title="Visite o nosso Instagram"></a>
+            </div>
+        </div>
+
     </main>
 
     <!-- Botão Voltar ao Topo -->
-    <button id="btnTopo" title="Voltar ao início">⬆️</button>
+    <button id="btnTopo" title="Voltar ao início" aria-label="Voltar ao topo">⬆️</button>
 
-    <!-- Script do botão -->
+    <!-- Script para o botão funcionar -->
     <script>
         let mybutton = document.getElementById("btnTopo");
 
+        // Mostra o botão quando se faz scroll 200px para baixo
         window.onscroll = function() {
             if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
                 mybutton.style.display = "block";
@@ -35,6 +47,7 @@
             }
         };
 
+        // Regressa ao topo de forma suave ao clicar
         mybutton.onclick = function() {
             window.scrollTo({top: 0, behavior: 'smooth'});
         };
