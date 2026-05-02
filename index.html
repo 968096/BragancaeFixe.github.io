@@ -29,25 +29,29 @@
     </main>
 
     <!-- Botão Voltar ao Topo -->
-    <button id="btnTopo" title="Voltar ao início" aria-label="Voltar ao topo">⬆️</button>
+    <button id="btnTopo" title="Voltar ao início" aria-label="Voltar ao topo">
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="6 15 12 9 18 15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    </button>
 
     <!-- Script para o botão funcionar -->
     <script>
         let mybutton = document.getElementById("btnTopo");
 
-        // Mostra o botão quando se faz scroll 200px para baixo
-        window.onscroll = function() {
+        // Mostra o botão quando se faz scroll 200px para baixo (usa classe .show para animação)
+        window.addEventListener('scroll', function() {
             if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                mybutton.style.display = "block";
+                mybutton.classList.add('show');
             } else {
-                mybutton.style.display = "none";
+                mybutton.classList.remove('show');
             }
-        };
+        });
 
         // Regressa ao topo de forma suave ao clicar
-        mybutton.onclick = function() {
+        mybutton.addEventListener('click', function() {
             window.scrollTo({top: 0, behavior: 'smooth'});
-        };
+        });
     </script>
 </body>
 </html>

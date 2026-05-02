@@ -61,32 +61,68 @@ body {
 
 /* --- 4. BOTÃO VOLTAR AO TOPO --- */
 #btnTopo {
-    display: none; 
-    position: fixed; 
-    bottom: 20px; 
-    right: 20px; 
-    z-index: 99; 
-    font-size: 24px;
+    display: flex;
+    background-color: #FF9800;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s, opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
     border: none;
-    outline: none;
-    background-color: #d35400; 
-    color: white;
+    color: #fff;
     cursor: pointer;
-    padding: 10px 15px;
-    border-radius: 50%; 
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.3); 
-    transition: background-color 0.3s;
+    align-items: center;
+    justify-content: center;
+}
+
+#btnTopo svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+    color: #fff;
 }
 
 #btnTopo:hover {
-    background-color: #a04000; 
+    cursor: pointer;
+    background-color: #333;
+}
+#btnTopo:active {
+    background-color: #555;
+}
+#btnTopo.show {
+    opacity: 1;
+    visibility: visible;
 }
 
-#btnTopo:focus {
-    outline: 3px solid rgba(255,255,255,0.4);
-    box-shadow: 0 0 0 4px rgba(208,82,0,0.15);
+/* Styles for the content section */
+.content {
+    width: 77%;
+    margin: 50px auto;
+    font-family: 'Merriweather', serif;
+    font-size: 17px;
+    color: #6c767a;
+    line-height: 1.9;
 }
-
-@media (max-width: 480px) {
-    .imagem-cortada { margin-bottom: -0.8rem; }
+@media (min-width: 500px) {
+    .content {
+        width: 43%;
+    }
+    #btnTopo {
+        margin: 30px;
+    }
+}
+.content h1 {
+    margin-bottom: -10px;
+    color: #03a9f4;
+    line-height: 1.5;
+}
+.content h3 {
+    font-style: italic;
+    color: #96a2a7;
 }
