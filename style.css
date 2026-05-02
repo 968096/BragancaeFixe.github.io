@@ -29,6 +29,8 @@ body {
     display: block;
     width: 100%;
     height: auto;
+    /* reduz ligeiramente o espaçamento abaixo da imagem 5 para ficar contínuo com o rodapé */
+    margin-bottom: -0.5rem;
 }
 
 
@@ -50,6 +52,11 @@ body {
     display: block;
     z-index: 20;
     /* background-color: rgba(255, 0, 0, 0.4); */
+}
+
+/* Footer follows the same sizing as other images (inside centered content area) */
+.rodape-container {
+    width: 100%;
 }
 
 /* --- 4. BOTÃO VOLTAR AO TOPO --- */
@@ -78,4 +85,8 @@ body {
 #btnTopo:focus {
     outline: 3px solid rgba(255,255,255,0.4);
     box-shadow: 0 0 0 4px rgba(208,82,0,0.15);
+}
+
+@media (max-width: 480px) {
+    .imagem-cortada { margin-bottom: -0.8rem; }
 }
